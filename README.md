@@ -18,9 +18,7 @@ https://aiinterview-question-generator.netlify.app/
 
 ![AI-Interview-Question-Generator](Screenshots/Screenshot1.png)
 
-![AI-Interview-Question-Generator](Screenshots/Screenshot1.png)
-
-![AI-Interview-Question-Generator](Screenshots/Screenshot1.png)
+![AI-Interview-Question-Generator](Screenshots/Screenshot2.png)
 
 ---
 
