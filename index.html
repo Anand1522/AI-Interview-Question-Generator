@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🚀 AI Interview Question Generator</title>
+
+<style>
+
+body{
+font-family:Arial,sans-serif;
+background:#0f172a;
+color:white;
+display:flex;
+justify-content:center;
+align-items:center;
+min-height:100vh;
+margin:0;
+padding:20px;
+}
+
+.container{
+width:800px;
+max-width:100%;
+background:#1e293b;
+padding:25px;
+border-radius:15px;
+box-shadow:0 0 15px rgba(0,0,0,0.3);
+}
+
+h2{
+text-align:center;
+color:#38bdf8;
+}
+
+select{
+width:100%;
+padding:12px;
+margin-top:10px;
+border-radius:8px;
+}
+
+button{
+width:100%;
+padding:12px;
+margin-top:15px;
+background:#38bdf8;
+border:none;
+border-radius:8px;
+font-weight:bold;
+cursor:pointer;
+font-size:16px;
+}
+
+.result{
+margin-top:20px;
+background:#0f172a;
+padding:15px;
+border-radius:10px;
+}
+
+ul{
+padding-left:20px;
+}
+
+.score{
+font-size:22px;
+color:#22c55e;
+font-weight:bold;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h2>🚀 AI Interview Question Generator</h2>
+
+<select id="role">
+
+<option value="">Select Career</option>
+
+<option value="datascientist">Data Scientist</option>
+
+<option value="dataanalyst">Data Analyst</option>
+
+<option value="aiengineer">AI Engineer</option>
+
+<option value="fullstack">Full Stack Developer</option>
+
+<option value="cyber">Cyber Security Analyst</option>
+
+</select>
+
+<select id="level">
+
+<option value="">Select Difficulty</option>
+
+<option value="beginner">Beginner</option>
+
+<option value="intermediate">Intermediate</option>
+
+<option value="advanced">Advanced</option>
+
+</select>
+
+<button onclick="generateQuestions()">
+Generate Interview Questions
+</button>
+
+<button onclick="resetForm()">
+Reset
+</button>
+
+<div id="result" class="result"></div>
+
+</div>
+
+<script>
+
+function generateQuestions(){
+
+let role=document.getElementById("role").value;
+let level=document.getElementById("level").value;
+
+if(role==="" || level===""){
+document.getElementById("result").innerHTML=
+"<h3>Please select both career and difficulty level.</h3>";
+return;
+}
+
+let questions=[];
+let topics=[];
+let score=0;
+
+if(role==="datascientist"){
+
+topics=["Python","SQL","Machine Learning","Statistics"];
+
+if(level==="beginner"){
+score=40;
+questions=[
+"What is Data Science?",
+"What is Pandas?",
+"What is NumPy?",
+"What is a CSV file?",
+"What is Machine Learning?"
+];
+}
+
+if(level==="intermediate"){
+score=70;
+questions=[
+"Explain Overfitting.",
+"What is Feature Engineering?",
+"Difference between Supervised and Unsupervised Learning?",
+"What is Cross Validation?",
+"What is Logistic Regression?"
+];
+}
+
+if(level==="advanced"){
+score=95;
+questions=[
+"Explain Bias vs Variance.",
+"What is XGBoost?",
+"How does Random Forest work?",
+"What is Feature Selection?",
+"Explain Ensemble Learning."
+];
+}
+
+}
+
+else if(role==="dataanalyst"){
+
+topics=["Excel","SQL","Power BI","Visualization"];
+
+if(level==="beginner"){
+score=40;
+questions=[
+"What is Excel?",
+"What is SQL?",
+"What is a Database?",
+"What is a Pivot Table?",
+"What is Data Cleaning?"
+];
+}
+
+if(level==="intermediate"){
+score=70;
+questions=[
+"Explain SQL JOINs.",
+"What is Power BI?",
+"What is Dashboarding?",
+"What is Data Modeling?",
+"What is KPI?"
+];
+}
+
+if(level==="advanced"){
+score=90;
+questions=[
+"Explain Star Schema.",
+"What is DAX?",
+"What is Query Optimization?",
+"What is ETL?",
+"What is Data Governance?"
+];
+}
+
+}
+
+else if(role==="aiengineer"){
+
+topics=["Deep Learning","Neural Networks","Python","AI"];
+
+if(level==="beginner"){
+score=45;
+questions=[
+"What is AI?",
+"What is Deep Learning?",
+"What is TensorFlow?",
+"What is a Neural Network?",
+"What is a Dataset?"
+];
+}
+
+if(level==="intermediate"){
+score=75;
+questions=[
+"Explain CNN.",
+"What is Backpropagation?",
+"What is Gradient Descent?",
+"What is Transfer Learning?",
+"What is Fine-Tuning?"
+];
+}
+
+if(level==="advanced"){
+score=95;
+questions=[
+"What are Transformers?",
+"What is Attention Mechanism?",
+"What is RLHF?",
+"What is Vector Embedding?",
+"What is RAG?"
+];
+}
+
+}
+
+else if(role==="fullstack"){
+
+topics=["HTML","CSS","JavaScript","React"];
+
+if(level==="beginner"){
+score=40;
+questions=[
+"What is HTML?",
+"What is CSS?",
+"What is JavaScript?",
+"What is DOM?",
+"What is Responsive Design?"
+];
+}
+
+if(level==="intermediate"){
+score=70;
+questions=[
+"What is React?",
+"What is API?",
+"What is Local Storage?",
+"What is Async JavaScript?",
+"What is Node.js?"
+];
+}
+
+if(level==="advanced"){
+score=90;
+questions=[
+"What is JWT?",
+"What is System Design?",
+"What is Caching?",
+"What is Load Balancing?",
+"What is Microservices?"
+];
+}
+
+}
+
+else if(role==="cyber"){
+
+topics=["Networking","Security","Linux"];
+
+if(level==="beginner"){
+score=40;
+questions=[
+"What is Cyber Security?",
+"What is Firewall?",
+"What is Phishing?",
+"What is VPN?",
+"What is Malware?"
+];
+}
+
+if(level==="intermediate"){
+score=70;
+questions=[
+"What is SQL Injection?",
+"What is XSS?",
+"What is Network Scanning?",
+"What is Encryption?",
+"What is Ethical Hacking?"
+];
+}
+
+if(level==="advanced"){
+score=95;
+questions=[
+"What is Zero Trust Security?",
+"What is SIEM?",
+"What is Threat Hunting?",
+"What is Incident Response?",
+"What is Penetration Testing?"
+];
+}
+
+}
+
+let tips="Practice daily, understand concepts deeply, and build projects.";
+
+document.getElementById("result").innerHTML=`
+
+<div class="score">
+Interview Readiness Score: ${score}/100
+</div>
+
+<h3>📚 Recommended Topics</h3>
+
+<ul>
+${topics.map(x=>`<li>${x}</li>`).join("")}
+</ul>
+
+<h3>🎯 Interview Questions</h3>
+
+<ul>
+${questions.map(x=>`<li>${x}</li>`).join("")}
+</ul>
+
+<h3>💡 Preparation Tip</h3>
+
+<p>${tips}</p>
+
+`;
+
+}
+
+function resetForm(){
+
+document.getElementById("role").value="";
+document.getElementById("level").value="";
+document.getElementById("result").innerHTML="";
+
+}
+
+</script>
+
+</body>
+</html>
